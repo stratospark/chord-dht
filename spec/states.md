@@ -1,5 +1,7 @@
 # States
 
+![](states.png)
+
 ## INIT
 Initial state when node is created, not yet part of network.
 
