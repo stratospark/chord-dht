@@ -1,0 +1,24 @@
+digraph {
+    INIT
+    WFC [label="WAITING_FOR_CONNECTION"]
+    PM [label="PROSPECTIVE_MEMBER"]
+    MEM [label="MEMBER"]
+    ST [label="STABILIZING"]
+    NU [label="NETWORK_UPDATE"]
+    DM [label="DATA_MIGRATION"]
+    D [label="DISCONNECTED"]
+    ERR [label="ERROR"]
+
+    INIT -> WFC [label="Join"]
+    WFC -> PM [label="NotifySuccessor"]
+    PM -> MEM [label=""]
+    MEM -> ST [label="Stabilize"]
+    ST -> MEM
+    ST -> NU
+    NU -> MEM
+    MEM -> D
+    MEM -> DM
+    DM -> MEM
+    ERR 
+
+}
